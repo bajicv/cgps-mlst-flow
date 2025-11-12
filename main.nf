@@ -9,7 +9,7 @@ nextflow.enable.dsl=2
 process CGPS_MLST {
 
     tag "Pathogenwatch (cg)MLST | Input: ${input_fasta.baseName}"
-    publishDir "${params.publish_dir}/jsons", mode:'copy', overwrite: true
+    publishDir "${params.out_dir}/jsons", mode:'copy', overwrite: true
     container "${ workflow.containerEngine == 'singularity' && !task.ext.singularity_pull_docker_container ?
         'library://bajicv/pathogenwatch/mlst:v0.0.1' : 
         'library://bajicv/pathogenwatch/mlst:v0.0.1'}"
@@ -36,7 +36,7 @@ process CGPS_MLST {
 process SUMMARIZE_JSONS {
 
     tag "Create summary profile tables"
-    publishDir "${params.publish_dir}", mode:'copy', overwrite: true
+    publishDir "${params.out_dir}", mode:'copy', overwrite: true
     conda "${baseDir}/envs/r_json_env.yml"
     container "${ workflow.containerEngine == 'singularity' && !task.ext.singularity_pull_docker_container ?
         'library://bajicv/r/tidyverse-jsonlite-optparse:latest' : 

@@ -35,10 +35,6 @@ option_list <- list(
 opt_parser <- OptionParser(option_list = option_list)
 opt <- parse_args(opt_parser)
 
-# TESSTING PURPOSES ONLY -------------------------------------------------------
-# opt$i <- "/scratch/bajicv/projects/cgps-mlst-flow/tmp_json_list.txt"
-# opt$o <- "/scratch/bajicv/projects/cgps-mlst-flow/X_test_out"
-
 # Check the provided option and execute the corresponding code -----------------
 if (is.null(opt$i)) {
     print_help(opt_parser)

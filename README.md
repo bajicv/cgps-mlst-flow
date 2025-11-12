@@ -1,4 +1,4 @@
-# **CGPS-MLST-Flow**  - A nextflow wrapper for running CGPS-MLST
+# **CGPS-MLST-Flow**  
 
 CGPS-MLST-Flow is a Nextflow wrapper for [CGPS (cg)MLST](https://github.com/pathogenwatch-oss/mlst). 
 
@@ -10,7 +10,7 @@ To run the pipeline, provide the following arguments directly via command line o
 - `indexed_scheme_dir`: Path to the directory with indexed (cg)MLST schemes in PathogenWatch format.
 - `scheme_name`: `shortname` of the (cg)MLST scheme to be used (should match `shortname` defined the indexed schemes).
 - `input_dir`: Path to the directory with FASTA files for (cg)MLST analysis.
-- `publish_dir`: Path to the output directory where results will be stored.
+- `out_dir`: Path to the output directory where results will be stored.
 
 Example execution with parameters defined on the command line:
 ```bash
@@ -19,7 +19,7 @@ nextflow run bajicv/cgps-mlst-flow \
     --indexed_scheme_dir /path/to/indexed_schemes \
     --scheme_name mycobacterium_1 \
     --input_dir /path/to/input_fastas \
-    --publish_dir /path/to/output_directory
+    --out_dir /path/to/output_directory
 ```
 
 Example execution with parameters defined in the `params.yaml`:
@@ -33,7 +33,7 @@ nextflow run bajicv/cgps-mlst-flow \
 
 ## Output
 
-The pipeline will output two sub-directories in defined `--publish_dir`: `jsons` and `profile_summary`.
+The pipeline will output two sub-directories in defined `--out_dir`: `jsons` and `profile_summary`.
 
 1. `jsons` directory stores per sample `.json` files generated during (cg)MLST typing.
 
