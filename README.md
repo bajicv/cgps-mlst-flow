@@ -2,7 +2,6 @@
 
 CGPS-MLST-Flow is a Nextflow wrapper for [CGPS (cg)MLST](https://github.com/pathogenwatch-oss/mlst). 
 
---------------------------------------------------------------------------------
 
 ## Usage
 
@@ -29,8 +28,6 @@ nextflow run bajicv/cgps-mlst-flow \
     -params-file params.yaml
 ```
 
---------------------------------------------------------------------------------
-
 ## Output
 
 The pipeline will output two sub-directories in defined `--out_dir`: `jsons` and `profile_summary`.
@@ -42,14 +39,11 @@ The pipeline will output two sub-directories in defined `--out_dir`: `jsons` and
    - `*_profile.tsv` contains the (cg)MLST allele profiles for all samples, in which `0`'s indicate missing loci, known alleles are represented by their original numeric identifiers from the scheme, and novel alleles are represented by hash values.
    - `*_profile_hased.tsv` is similar to `_profile.tsv`, but **all** alleles (both known and novel) are represented by **hashes**.
 
---------------------------------------------------------------------------------
 
-# Credits
+## Credits
 
 Many thanks to Maximiliar Povill Driller and Lucas Florin for their extensive assistance in the development of this pipeline.
 
 We thank the PathogenWatch team for developing and maintaining [CGPS (cg)MLST](https://github.com/pathogenwatch-oss/mlst) and [typing-databases](https://github.com/pathogenwatch-oss/typing-databases) tools. 
 
 Special thanks to Corin Yets and Khalil Abu-Dahab for their support and guidance regarding the usage of CGPS (cg)MLST and typing-databases.
-
---------------------------------------------------------------------------------
